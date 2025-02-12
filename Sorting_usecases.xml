@@ -1,0 +1,42 @@
+When to Use Different Sorting Algorithms:
+
+Selection Sort
+
+Best for small datasets or when memory swaps are expensive.
+Has a consistent time complexity of O(n²), so it's not efficient for large datasets.
+Useful when writing to memory (e.g., flash memory) is costly, as it makes at most O(n) swaps.
+
+Insertion Sort
+Best for small or nearly sorted datasets.
+Has an average and worst-case time complexity of O(n²), but performs well on partially sorted arrays with O(n) complexity in the best case.
+Used in hybrid sorting algorithms like Timsort and Introsort for small partitions.
+Merge Sort
+
+Best for large datasets and linked lists.
+Works well with external sorting (e.g., sorting data on disk) due to its predictable O(n log n) complexity.
+Preferred when stability is required (preserves the relative order of equal elements).
+Quick Sort
+
+Best for general-purpose sorting when an average O(n log n) complexity is desired.
+Not stable, but usually faster than merge sort for in-memory sorting.
+Used in standard libraries like C++ STL sort() and Python’s sorted().
+Which Quick Sort Partitioning Scheme to Use:
+Lomuto Partition (Single Pivot)
+
+Simpler to implement but performs more swaps.
+Performs worse when there are many duplicate elements.
+Not ideal for large datasets due to extra swaps.
+Hoare Partition (Dual Pivot)
+
+More efficient as it reduces the number of swaps.
+Works well for random and uniform distributions.
+Better choice for quicksort in general-purpose sorting.
+Median-of-Three Partitioning
+
+Selects the median of three elements (first, middle, last) as a pivot.
+Helps avoid worst-case O(n²) performance in already sorted or reverse-sorted arrays.
+Used in optimized implementations of quicksort in real-world applications.
+Best Partition Strategy:
+If input is nearly sorted → Hoare partition with Median-of-Three.
+If input has many duplicates → 3-way partitioning quicksort (Dutch National Flag algorithm).
+If input is random → Hoare partition for best performance.

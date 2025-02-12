@@ -1,0 +1,20 @@
+When to Use Binary Search
+
+On Sorted Arrays: Works best when the dataset is already sorted or can be sorted once and then searched multiple times.
+
+For Fast Lookups: Ideal for searching large static datasets like firmware configuration tables, LUTs (Look-Up Tables), or indexed databases.
+
+Low Memory Environments: Since it only requires O(1) extra space, it’s great for embedded systems where memory is limited.
+
+Range Queries: Can be extended for upper/lower bound searches, useful for applications like BMS threshold lookups in automotive software.
+
+Where It’s Used
+Databases (e.g., indexing for fast record retrieval)
+Game engines (e.g., spatial partitioning for rendering optimizations)
+Machine learning models (e.g., searching through sorted feature sets)
+Firmware (e.g., finding predefined values in sensor calibration data)
+
+Where It Won’t Work
+Unsorted Data → Needs sorting first, making it inefficient for dynamic datasets.
+Linked Lists → Inefficient, as linked lists don’t allow O(1) index access.
+Highly Dynamic Data → If data is constantly changing, maintaining sorted order can be expensive.
